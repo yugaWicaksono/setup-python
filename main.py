@@ -1,5 +1,3 @@
-import requests #import module
-
 """
 FOR WINDOWS
 
@@ -39,28 +37,36 @@ functionOnPython('this is my message')
 #4. assigning variable when using requests module 
 # recommended extension to use with this AREPL 
 
-user = None
+import requests #import module
+
+
+user = {"name": { "title": "Mr", "first": "John", "last": "Smith"}}
 title = None
 firstName = None
 lastName = None
-fullName = None
 
 
 if user is None:
     response = requests.get('https://randomuser.me/api')
     data = response.json()
     user = data['results'][0]
-else:
-    #5. assign the randomn name
-    title = user["name"]["title"]
-    firstName = user["name"]["first"]
-    lastName = user["name"]["last"]
-    fullName = f'Hello {title} {firstName} {lastName}'
-
-if fullName is not None:
-    functionOnPython(fullName) # will print random first name
 
 
+#5. assign the randomn name
+title = user["name"]["title"]
+firstName = user["name"]["first"]
+lastName = user["name"]["last"]
+greeting = f'Hello {title} {firstName} {lastName}'
 
+
+#6. print greeting based on the fetch data
+functionOnPython(greeting) # will print random first name
+
+
+#7. working with JSON data 
+import json
+
+jsonData = json.loads('[{"id": 1, "species": "dog"}]')
+print(jsonData[0])
 
 

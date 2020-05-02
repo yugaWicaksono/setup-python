@@ -3,4 +3,5 @@ venv/Include/
 venv/Lib
 venc/Scripts/
 
-.vscode
+.vscode/
+
